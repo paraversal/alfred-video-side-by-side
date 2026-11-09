@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.paraversal.side-by-side</string>
+	<key>connections</key>
+	<dict>
+		<key>9C7E1B2A-4D3F-4A8E-B6C1-2F5D7E9A0B31</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3F6A8C0D-2B4E-4D71-9A5C-8E1F0B2D4A63</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>paraversal</string>
+	<key>description</key>
+	<string>Compare a compressed video against its original, split down the middle.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Side by Side</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/bin/bash ./sbs.sh "$@"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3F6A8C0D-2B4E-4D71-9A5C-8E1F0B2D4A63</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>1</integer>
+				<key>filetypes</key>
+				<array>
+					<string>public.movie</string>
+					<string>public.mpeg-4</string>
+				</array>
+				<key>name</key>
+				<string>Compare Two Videos Side by Side</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>9C7E1B2A-4D3F-4A8E-B6C1-2F5D7E9A0B31</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Select exactly two versions of the same video in Alfred, then choose “Compare Two Videos Side by Side” from the File Actions.
+
+The larger file is treated as the original and shown on the right. The smaller file is treated as the compressed version and shown on the left. The compressed file supplies the left half and the original supplies the right half, so together the two halves reconstruct one complete frame.
+
+The player opens maximised, muted and looping. A thin progress line along the bottom shows the current position and total length.
+
+Requirements: mpv and ffmpeg/ffprobe installed with Homebrew (Apple silicon paths are used).</string>
+	<key>uidata</key>
+	<dict>
+		<key>3F6A8C0D-2B4E-4D71-9A5C-8E1F0B2D4A63</key>
+		<dict>
+			<key>xpos</key>
+			<real>360</real>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>9C7E1B2A-4D3F-4A8E-B6C1-2F5D7E9A0B31</key>
+		<dict>
+			<key>xpos</key>
+			<real>100</real>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
