@@ -24,6 +24,8 @@ The bigger file is treated as the original and goes on the right.
 
 Requires macOS, Alfred 5 with the Powerpack (File Actions), and Homebrew.
 
+Download from Releases, or build it yourself:
+
 ```sh
 brew install mpv ffmpeg
 ./build.sh

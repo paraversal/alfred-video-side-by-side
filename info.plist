@@ -102,7 +102,7 @@ Requirements: mpv and ffmpeg/ffprobe installed with Homebrew (Apple silicon path
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
