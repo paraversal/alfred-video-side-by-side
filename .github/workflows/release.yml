@@ -17,7 +17,7 @@ jobs:
         run: |
           python3 - "${GITHUB_REF_NAME#v}" <<'EOF'
           import plistlib, sys
-          path = "src/info.plist"
+          path = "info.plist"
           with open(path, "rb") as f:
               data = plistlib.load(f)
           data["version"] = sys.argv[1]
@@ -27,12 +27,12 @@ jobs:
 
       - name: Build .alfredworkflow
         run: |
-          cd src
-          zip -r -X "$RUNNER_TEMP/SideBySide.alfredworkflow" . -x ".DS_Store" "*/.DS_Store" "*.pyc" "__pycache__/*"
-          unzip -l "$RUNNER_TEMP/SideBySide.alfredworkflow"
-          unzip -l "$RUNNER_TEMP/SideBySide.alfredworkflow" | grep -q " info.plist$"
+          chmod +x sbs.sh
+          zip -X -r "$RUNNER_TEMP/alfred-video-side-by-side.alfredworkflow" info.plist sbs.sh sbs.lua icon.png README.md
+          unzip -l "$RUNNER_TEMP/alfred-video-side-by-side.alfredworkflow"
+          unzip -l "$RUNNER_TEMP/alfred-video-side-by-side.alfredworkflow" | grep -q " info.plist$"
 
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP/SideBySide.alfredworkflow" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP/alfred-video-side-by-side.alfredworkflow" --generate-notes

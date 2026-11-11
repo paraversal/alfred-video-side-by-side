@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build SideBySide.alfredworkflow from the files in this folder.
+# Build alfred-video-side-by-side.alfredworkflow from the files in this folder.
 
 set -euo pipefail
 
@@ -16,7 +16,7 @@ chmod +x sbs.sh
 /bin/bash -n sbs.sh
 /usr/bin/plutil -lint info.plist >/dev/null
 
-TARGET="SideBySide.alfredworkflow"
+TARGET="alfred-video-side-by-side.alfredworkflow"
 /bin/rm -f "$TARGET"
 /usr/bin/zip -X -r "$TARGET" \
     info.plist sbs.sh sbs.lua icon.png README.md

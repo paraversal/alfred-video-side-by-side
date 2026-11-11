@@ -29,7 +29,7 @@ Download from Releases, or build it yourself:
 ```sh
 brew install mpv ffmpeg
 ./build.sh
-open SideBySide.alfredworkflow
+open alfred-video-side-by-side.alfredworkflow
 ```
 
 Alfred will ask to import the workflow. The workflow uses the Apple silicon
@@ -119,12 +119,12 @@ script outside Alfred.
 ## Layout
 
 ```text
-video-side-by-side-workflow/
+alfred-video-side-by-side/
 ├── info.plist   Alfred workflow definition
 ├── sbs.sh       validation, size sorting, ffprobe, filter graph, mpv launch
 ├── sbs.lua      size labels, timeline and seam overlay
 ├── icon.png     workflow icon (1024 px, transparent)
-├── build.sh     builds SideBySide.alfredworkflow
+├── build.sh     builds alfred-video-side-by-side.alfredworkflow
 └── README.md
 ```
 
@@ -134,6 +134,6 @@ video-side-by-side-workflow/
 ./build.sh
 ```
 
-This creates `SideBySide.alfredworkflow` in the project folder. It does not
+This creates `alfred-video-side-by-side.alfredworkflow` in the project folder. It does not
 install or open anything; double-click the file (or use `open`) to import it
 into Alfred.
